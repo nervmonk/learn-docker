@@ -1,0 +1,24 @@
+Difference between images and container
+- images: Blueprint, where the code and config lives
+- Container: Running instances
+
+Add interactivity on container by adding -it flag, e.g: docker run -it node
+
+
+Creating images from Dockerfile:
+- docker build .
+
+Checking docker images:
+- docker ps -a
+
+Run the container:
+- docker run -p <host-port>:<docker-port> <container-id or name>
+
+In nodejs app example, when you've made a change in server.js code and restarting the container, your change will not be reflected in the running container.
+Why?
+- Images are actually locked and finishes once you finish build them. It's read only and can't be edited from the outside
+- If you change anything in part of your blueprint, you have to rebuild it
+
+
+DOCKER LAYER BASED ARCHITECTURE
+- Think one layer of one command in your Dockerfile. when one layer change, all the subsequent layer will be re-executed (no caching), so orders matter in context of image rebuilding speed
