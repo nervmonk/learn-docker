@@ -22,3 +22,15 @@ Why?
 
 DOCKER LAYER BASED ARCHITECTURE
 - Think one layer of one command in your Dockerfile. when one layer change, all the subsequent layer will be re-executed (no caching), so orders matter in context of image rebuilding speed
+
+
+need help?
+- docker --help
+
+command
+managing images and containers
+- docker ps : list all the running container
+- docker ps -a : list all the containers, including stopped containers
+
+- docker run: create new container based on an image
+- docker start: restarting stopped container
