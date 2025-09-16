@@ -34,3 +34,28 @@ managing images and containers
 
 - docker run: create new container based on an image
 - docker start: restarting stopped container
+
+
+detaching and attaching
+- docker -d (detach)
+- docker attach <container_name>
+
+
+interactive mode
+- docker run -it
+
+Deleting images and container
+container:
+- docker rm <container_name> (You can't remove running container)
+- docker container prune
+images:
+- docker rmi <image id> (notes: you can only remove images if they're not getting used by any container anymore, including stopped container)
+- docker images prune
+
+
+Images
+- docker images (List all existing images)
+
+2 ways of sharing your apps with Docker:
+- Dockerfile
+- Built Image (Docker Hub or Private Registry)
